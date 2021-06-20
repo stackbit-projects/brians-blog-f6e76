@@ -1,0 +1,237 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: author
+        label: Author
+      - type: datetime
+        name: date
+        label: Date
+      - type: list
+        name: categories
+        label: Categories
+        items:
+          type: string
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: boolean
+        name: math
+        label: Math
+      - type: boolean
+        name: mermaid
+        label: Mermaid
+      - type: object
+        name: image
+        label: Image
+        fields:
+          - type: image
+            name: src
+            label: Src
+      - type: boolean
+        name: pin
+        label: Pin
+  tab:
+    type: page
+    label: Tab
+    folder: _tabs
+    match:
+      - about.md
+      - archives.md
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: icon
+        label: Icon
+      - type: number
+        name: order
+        label: Order
+        subtype: int
+      - type: string
+        name: layout
+        label: Layout
+  tab_1:
+    type: page
+    label: Tab 1
+    folder: _tabs
+    match:
+      - categories.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: icon
+        label: Icon
+      - type: number
+        name: order
+        label: Order
+        subtype: int
+  tab_2:
+    type: page
+    label: Tab 2
+    folder: _tabs
+    match:
+      - tags.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: icon
+        label: Icon
+      - type: number
+        name: order
+        label: Order
+        subtype: int
+  doc:
+    type: page
+    label: Doc
+    folder: docs
+    match: '*'
+    fields: []
+  contact:
+    type: data
+    label: Contact
+    file: contact.yml
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: type
+          label: Type
+        - type: string
+          name: icon
+          label: Icon
+        - type: boolean
+          name: noblank
+          label: Noblank
+  date_format:
+    type: data
+    label: Date Format
+    file: date_format.yml
+    fields:
+      - type: string
+        name: tooltip
+        label: Tooltip
+      - type: object
+        name: post
+        label: Post
+        fields:
+          - type: string
+            name: long
+            label: Long
+          - type: string
+            name: short
+            label: Short
+  label:
+    type: data
+    label: Label
+    file: label.yml
+    fields:
+      - type: object
+        name: panel
+        label: Panel
+        fields:
+          - type: string
+            name: lastmod
+            label: Lastmod
+          - type: string
+            name: trending_tags
+            label: Trending Tags
+          - type: string
+            name: toc
+            label: Toc
+      - type: object
+        name: post
+        label: Post
+        fields:
+          - type: string
+            name: relate_posts
+            label: Relate Posts
+          - type: string
+            name: share
+            label: Share
+          - type: object
+            name: button
+            label: Button
+            fields:
+              - type: string
+                name: next
+                label: Next
+              - type: string
+                name: previous
+                label: Previous
+      - type: string
+        name: search_hint
+        label: Search Hint
+      - type: string
+        name: pin_prompt
+        label: Pin Prompt
+      - type: string
+        name: read_time_unit
+        label: Read Time Unit
+  rights:
+    type: data
+    label: Rights
+    file: rights.yml
+    fields:
+      - type: object
+        name: license
+        label: License
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: link
+            label: Link
+      - type: string
+        name: brief
+        label: Brief
+      - type: string
+        name: verbose
+        label: Verbose
+  share:
+    type: data
+    label: Share
+    file: share.yml
+    fields:
+      - type: list
+        name: platforms
+        label: Platforms
+        items:
+          type: object
+          fields:
+            - type: string
+              name: type
+              label: Type
+            - type: string
+              name: icon
+              label: Icon
+            - type: string
+              name: link
+              label: Link
